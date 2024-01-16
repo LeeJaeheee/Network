@@ -16,10 +16,20 @@ struct Market: Codable {
 
 class MarketViewController: UIViewController {
 
+    @IBOutlet var marketTableView: UITableView!
+    
+    var list: [Market] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        configureTableView()
         callRequest()
+    }
+    
+    func configureTableView() {
+        marketTableView.delegate = self
+        marketTableView.dataSource = self
     }
     
     func callRequest() {
@@ -27,15 +37,34 @@ class MarketViewController: UIViewController {
         
         AF
             .request(url, method: .get)
+            .validate(statusCode: 200..<300)
             .responseDecodable(of: [Market].self) { response in
                 switch response.result {
                 case .success(let success):
-                    //print(success)
-                    print(success[0].korean_name)
+                    dump(success)
+                    self.list = success
+                    self.marketTableView.reloadData()
                 case .failure(let failure):
                     print(failure)
                 }
             }
     }
 
+}
+
+extension MarketViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "marketCell")!
+        let data = list[indexPath.row]
+        cell.textLabel?.text = list[indexPath.row].market
+        cell.detailTextLabel?.text = list[indexPath.row].korean_name
+        return cell
+    }
+    
+    
 }
