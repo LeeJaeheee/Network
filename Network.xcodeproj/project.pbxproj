@@ -20,6 +20,15 @@
 		D2FB29AD2B576AEF0084314E /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB29AC2B576AEF0084314E /* BookViewController.swift */; };
 		D2FB29AF2B576C620084314E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D2FB29AE2B576C620084314E /* .gitignore */; };
 		D2FB29B12B576D440084314E /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB29B02B576D440084314E /* APIKey.swift */; };
+		D2FB29B52B57F34B0084314E /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB29B42B57F34B0084314E /* UIButton+Extension.swift */; };
+		D2FB29B72B57F8B00084314E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB29B62B57F8B00084314E /* UIView+Extension.swift */; };
+		D2FB29B92B57FB850084314E /* PickLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB29B82B57FB850084314E /* PickLanguageViewController.swift */; };
+		D2FB29BC2B57FC150084314E /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB29BB2B57FC150084314E /* Protocol.swift */; };
+		D2FB29BE2B57FC870084314E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB29BD2B57FC870084314E /* UIViewController+Extension.swift */; };
+		D2FB29C32B5814D30084314E /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB29C12B5814D30084314E /* BookCollectionViewCell.swift */; };
+		D2FB29C42B5814D30084314E /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FB29C22B5814D30084314E /* BookCollectionViewCell.xib */; };
+		D2FB29C82B581B7B0084314E /* UICollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB29C72B581B7B0084314E /* UICollectionViewCell+Extension.swift */; };
+		D2FB29CB2B581C890084314E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D2FB29CA2B581C890084314E /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +46,14 @@
 		D2FB29AC2B576AEF0084314E /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		D2FB29AE2B576C620084314E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D2FB29B02B576D440084314E /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		D2FB29B42B57F34B0084314E /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		D2FB29B62B57F8B00084314E /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		D2FB29B82B57FB850084314E /* PickLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickLanguageViewController.swift; sourceTree = "<group>"; };
+		D2FB29BB2B57FC150084314E /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		D2FB29BD2B57FC870084314E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		D2FB29C12B5814D30084314E /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
+		D2FB29C22B5814D30084314E /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
+		D2FB29C72B581B7B0084314E /* UICollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2FB29CB2B581C890084314E /* Kingfisher in Frameworks */,
 				D258170B2B561245005B95FC /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,10 +89,13 @@
 		D25816F42B5611C9005B95FC /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				D2FB29C02B5813DC0084314E /* Book */,
+				D2FB29BF2B57FD560084314E /* Papago */,
+				D2FB29BA2B57FC040084314E /* Protocol */,
+				D2FB29B32B57F3390084314E /* Extension */,
 				D2FB29B22B576E300084314E /* Resource */,
 				D25816F52B5611C9005B95FC /* AppDelegate.swift */,
 				D25816F72B5611C9005B95FC /* SceneDelegate.swift */,
-				D25816F92B5611C9005B95FC /* ViewController.swift */,
 				D25816FB2B5611C9005B95FC /* Main.storyboard */,
 				D25816FE2B5611CB005B95FC /* Assets.xcassets */,
 				D25817002B5611CB005B95FC /* LaunchScreen.storyboard */,
@@ -82,7 +103,6 @@
 				D258170C2B561273005B95FC /* LottoViewController.swift */,
 				D258170E2B56218E005B95FC /* MarketViewController.swift */,
 				D25817102B565784005B95FC /* LottoAPIManager.swift */,
-				D2FB29AC2B576AEF0084314E /* BookViewController.swift */,
 				D2FB29B02B576D440084314E /* APIKey.swift */,
 			);
 			path = Network;
@@ -93,6 +113,44 @@
 			children = (
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		D2FB29B32B57F3390084314E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D2FB29B42B57F34B0084314E /* UIButton+Extension.swift */,
+				D2FB29B62B57F8B00084314E /* UIView+Extension.swift */,
+				D2FB29BD2B57FC870084314E /* UIViewController+Extension.swift */,
+				D2FB29C72B581B7B0084314E /* UICollectionViewCell+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D2FB29BA2B57FC040084314E /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				D2FB29BB2B57FC150084314E /* Protocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		D2FB29BF2B57FD560084314E /* Papago */ = {
+			isa = PBXGroup;
+			children = (
+				D25816F92B5611C9005B95FC /* ViewController.swift */,
+				D2FB29B82B57FB850084314E /* PickLanguageViewController.swift */,
+			);
+			path = Papago;
+			sourceTree = "<group>";
+		};
+		D2FB29C02B5813DC0084314E /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				D2FB29AC2B576AEF0084314E /* BookViewController.swift */,
+				D2FB29C12B5814D30084314E /* BookCollectionViewCell.swift */,
+				D2FB29C22B5814D30084314E /* BookCollectionViewCell.xib */,
+			);
+			path = Book;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -113,6 +171,7 @@
 			name = Network;
 			packageProductDependencies = (
 				D258170A2B561245005B95FC /* Alamofire */,
+				D2FB29CA2B581C890084314E /* Kingfisher */,
 			);
 			productName = Network;
 			productReference = D25816F22B5611C9005B95FC /* Network.app */;
@@ -144,6 +203,7 @@
 			mainGroup = D25816E92B5611C9005B95FC;
 			packageReferences = (
 				D25817092B561245005B95FC /* XCRemoteSwiftPackageReference "Alamofire" */,
+				D2FB29C92B581C890084314E /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = D25816F32B5611C9005B95FC /* Products */;
 			projectDirPath = "";
@@ -163,6 +223,7 @@
 				D25817022B5611CB005B95FC /* LaunchScreen.storyboard in Resources */,
 				D25816FF2B5611CB005B95FC /* Assets.xcassets in Resources */,
 				D25816FD2B5611C9005B95FC /* Main.storyboard in Resources */,
+				D2FB29C42B5814D30084314E /* BookCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,13 +235,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				D25816FA2B5611C9005B95FC /* ViewController.swift in Sources */,
+				D2FB29BE2B57FC870084314E /* UIViewController+Extension.swift in Sources */,
 				D258170D2B561273005B95FC /* LottoViewController.swift in Sources */,
 				D2FB29B12B576D440084314E /* APIKey.swift in Sources */,
 				D258170F2B56218E005B95FC /* MarketViewController.swift in Sources */,
 				D2FB29AD2B576AEF0084314E /* BookViewController.swift in Sources */,
+				D2FB29B52B57F34B0084314E /* UIButton+Extension.swift in Sources */,
 				D25816F62B5611C9005B95FC /* AppDelegate.swift in Sources */,
+				D2FB29C82B581B7B0084314E /* UICollectionViewCell+Extension.swift in Sources */,
+				D2FB29B92B57FB850084314E /* PickLanguageViewController.swift in Sources */,
 				D25816F82B5611C9005B95FC /* SceneDelegate.swift in Sources */,
+				D2FB29B72B57F8B00084314E /* UIView+Extension.swift in Sources */,
+				D2FB29C32B5814D30084314E /* BookCollectionViewCell.swift in Sources */,
 				D25817112B565784005B95FC /* LottoAPIManager.swift in Sources */,
+				D2FB29BC2B57FC150084314E /* Protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +485,14 @@
 				minimumVersion = 5.8.1;
 			};
 		};
+		D2FB29C92B581C890084314E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -424,6 +500,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D25817092B561245005B95FC /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		D2FB29CA2B581C890084314E /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D2FB29C92B581C890084314E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

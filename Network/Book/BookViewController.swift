@@ -48,11 +48,17 @@ struct Meta: Codable {
 class BookViewController: UIViewController {
 
     @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var collectionView: UICollectionView!
+    
+    var list: [Document] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         searchBar.delegate = self
+        
+        configureCollectionView()
+        configureLayout()
     }
     
     func callRequest(text: String) {
@@ -70,6 +76,8 @@ class BookViewController: UIViewController {
                 switch response.result {
                 case .success(let success):
                     dump(success.documents)
+                    self.list = success.documents
+                    self.collectionView.reloadData()
                 case .failure(let failure):
                     print(failure)
                 }
@@ -78,10 +86,47 @@ class BookViewController: UIViewController {
 
 }
 
+extension BookViewController {
+    
+    func configureCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        let xib = UINib(nibName: BookCollectionViewCell.identifier, bundle: nil)
+        collectionView.register(xib, forCellWithReuseIdentifier: BookCollectionViewCell.identifier)
+    }
+    
+    func configureLayout() {
+        let spacing: CGFloat = 20
+        let width = (UIScreen.main.bounds.width - (spacing * 3)) / 2
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = spacing
+        layout.minimumInteritemSpacing = spacing
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        layout.itemSize = CGSize(width: width, height: width)
+        collectionView.collectionViewLayout = layout
+    }
+    
+}
+
 extension BookViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         callRequest(text: searchBar.text!)
     }
+    
+}
+
+extension BookViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        list.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as! BookCollectionViewCell
+        cell.configureCell(data: list[indexPath.item])
+        return cell
+    }
+    
     
 }
