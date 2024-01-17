@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Alamofire
+// import Alamofire
 
 // 사용할 데이터만 생성
 // Codable = Decodable & Encodable
@@ -27,37 +27,21 @@ class LottoViewController: UIViewController {
     @IBOutlet var numberTextField: UITextField!
     @IBOutlet var dateLabel: UILabel!
     
+    let manager = LottoAPIManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        callRequest(number: "1102")
+        manager.callRequest(number: "1102") { value in
+            self.dateLabel.text = value
+        }
     }
     
     @IBAction func textFieldReturnTapped(_ sender: UITextField) {
         // 공백, 문자 입력 등 처리해주기
-        callRequest(number: numberTextField.text!)
-    }
-    
-    func callRequest(number: String) {
-        // ?뒤에는 쿼리스트링
-        let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(number)"
-        
-        // 추상화 단계 높음 -> String만 전달해도 됨
-        // .request(url) 이렇게만 써도 alamofire 내부에서 get으로 인식함
-        AF
-            .request(url, method: .get)
-            .responseDecodable(of: Lotto.self) { response in
-                switch response.result {
-                case .success(let success):
-                    print(success)
-                    print(success.drwNo)
-                    
-                    // viewDidLoad에서 요청했지만 요청,응답 시간 걸리므로 화면 뜨고 나서 텍스트 변경됨
-                    self.dateLabel.text = success.drwNoDate
-                case .failure(let failure):
-                    print("오류 발생")
-                }
-            }
+        manager.callRequest(number: numberTextField.text!) { value in
+            self.dateLabel.text = value
+        }
     }
 
 }

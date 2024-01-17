@@ -37,13 +37,20 @@ class MarketViewController: UIViewController {
         
         AF
             .request(url, method: .get)
-            .validate(statusCode: 200..<300)
+            .validate(statusCode: 200..<501)
             .responseDecodable(of: [Market].self) { response in
                 switch response.result {
                 case .success(let success):
                     dump(success)
-                    self.list = success
-                    self.marketTableView.reloadData()
+                    
+                    // 상태코드를 기준으로 처리
+                    if response.response?.statusCode == 200 {
+                        self.list = success
+                        self.marketTableView.reloadData()
+                    } else if response.response?.statusCode == 500 {
+                        print("오류가 발생했어요. 잠시 후 다시 시도해주세요.")
+                    }
+                    
                 case .failure(let failure):
                     print(failure)
                 }

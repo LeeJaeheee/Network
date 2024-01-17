@@ -16,6 +16,7 @@
 		D258170B2B561245005B95FC /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D258170A2B561245005B95FC /* Alamofire */; };
 		D258170D2B561273005B95FC /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258170C2B561273005B95FC /* LottoViewController.swift */; };
 		D258170F2B56218E005B95FC /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D258170E2B56218E005B95FC /* MarketViewController.swift */; };
+		D25817112B565784005B95FC /* LottoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25817102B565784005B95FC /* LottoAPIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		D25817032B5611CB005B95FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D258170C2B561273005B95FC /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		D258170E2B56218E005B95FC /* MarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
+		D25817102B565784005B95FC /* LottoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoAPIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				D25817032B5611CB005B95FC /* Info.plist */,
 				D258170C2B561273005B95FC /* LottoViewController.swift */,
 				D258170E2B56218E005B95FC /* MarketViewController.swift */,
+				D25817102B565784005B95FC /* LottoAPIManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				D258170F2B56218E005B95FC /* MarketViewController.swift in Sources */,
 				D25816F62B5611C9005B95FC /* AppDelegate.swift in Sources */,
 				D25816F82B5611C9005B95FC /* SceneDelegate.swift in Sources */,
+				D25817112B565784005B95FC /* LottoAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
