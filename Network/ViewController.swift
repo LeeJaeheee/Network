@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 struct Jack {
     let boxOfficeResult: SmallJack
@@ -24,12 +25,29 @@ struct MovieJack {
 
 class ViewController: UIViewController {
 
+    @IBOutlet var sourceTextView: UITextView!
+    @IBOutlet var translateButton: UIButton!
+    @IBOutlet var targetLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        translateButton.addTarget(self, action: #selector(translateButtonClicked), for: .touchUpInside)
     }
-
     
+    @objc func translateButtonClicked() {
+        let url = "https://openapi.naver.com/v1/papago/n2mt"
+        let parameters: Parameters = [
+            "text": sourceTextView.text!,
+            "source": "ko",
+            "target": "en"
+        ]
+        let headers: HTTPHeaders = [
+            "X-Naver-Client-Id": "0d3xeduUNTdnEVt4CQNS",
+            "X-Naver-Client-Secret": "26mgFWh_ql"
+        ]
+        AF.request(url, method: .post, parameters: parameters, headers: headers)
+    }
 
 }
 
