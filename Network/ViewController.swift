@@ -8,19 +8,33 @@
 import UIKit
 import Alamofire
 
-struct Jack {
-    let boxOfficeResult: SmallJack
+/*
+ {
+     "message": {
+         "@type": "response",
+         "@service": "naverservice.nmt.proxy",
+         "@version": "1.0.0",
+         "result": {
+             "srcLangType": "ko",
+             "tarLangType": "en",
+             "translatedText": "Hello",
+             "engineType": "PRETRANS"
+         }
+     }
+ }
+ */
+struct Papago: Codable {
+    let message: PapagoMessage
 }
 
-struct SmallJack {
-    let boxOfficeType: String
-    let showRange: String
-    let dailyBoxOfficeList: [MovieJack]
+struct PapagoMessage: Codable {
+    let result: PapagoResult
 }
 
-struct MovieJack {
-    let movieNm: String
-    let openDt: String
+struct PapagoResult: Codable {
+    let srcLangType: String
+    let tarLangType: String
+    let translatedText: String
 }
 
 class ViewController: UIViewController {
@@ -43,10 +57,19 @@ class ViewController: UIViewController {
             "target": "en"
         ]
         let headers: HTTPHeaders = [
-            "X-Naver-Client-Id": "0d3xeduUNTdnEVt4CQNS",
-            "X-Naver-Client-Secret": "26mgFWh_ql"
+            "X-Naver-Client-Id": APIKey.clientID,
+            "X-Naver-Client-Secret": APIKey.clientSecret
         ]
         AF.request(url, method: .post, parameters: parameters, headers: headers)
+            .responseDecodable(of: Papago.self) { response in
+                switch response.result {
+                case .success(let success):
+                    dump(success)
+                    self.targetLabel.text = success.message.result.translatedText
+                case .failure(let failure):
+                    print(failure)
+                }
+            }
     }
 
 }

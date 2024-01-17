@@ -19,6 +19,7 @@
 		D25817112B565784005B95FC /* LottoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25817102B565784005B95FC /* LottoAPIManager.swift */; };
 		D2FB29AD2B576AEF0084314E /* BookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB29AC2B576AEF0084314E /* BookViewController.swift */; };
 		D2FB29AF2B576C620084314E /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D2FB29AE2B576C620084314E /* .gitignore */; };
+		D2FB29B12B576D440084314E /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FB29B02B576D440084314E /* APIKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		D25817102B565784005B95FC /* LottoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoAPIManager.swift; sourceTree = "<group>"; };
 		D2FB29AC2B576AEF0084314E /* BookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewController.swift; sourceTree = "<group>"; };
 		D2FB29AE2B576C620084314E /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		D2FB29B02B576D440084314E /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		D25816F42B5611C9005B95FC /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				D2FB29B22B576E300084314E /* Resource */,
 				D25816F52B5611C9005B95FC /* AppDelegate.swift */,
 				D25816F72B5611C9005B95FC /* SceneDelegate.swift */,
 				D25816F92B5611C9005B95FC /* ViewController.swift */,
@@ -80,8 +83,16 @@
 				D258170E2B56218E005B95FC /* MarketViewController.swift */,
 				D25817102B565784005B95FC /* LottoAPIManager.swift */,
 				D2FB29AC2B576AEF0084314E /* BookViewController.swift */,
+				D2FB29B02B576D440084314E /* APIKey.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		D2FB29B22B576E300084314E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +175,7 @@
 			files = (
 				D25816FA2B5611C9005B95FC /* ViewController.swift in Sources */,
 				D258170D2B561273005B95FC /* LottoViewController.swift in Sources */,
+				D2FB29B12B576D440084314E /* APIKey.swift in Sources */,
 				D258170F2B56218E005B95FC /* MarketViewController.swift in Sources */,
 				D2FB29AD2B576AEF0084314E /* BookViewController.swift in Sources */,
 				D25816F62B5611C9005B95FC /* AppDelegate.swift in Sources */,
