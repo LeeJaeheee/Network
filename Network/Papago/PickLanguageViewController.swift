@@ -11,7 +11,7 @@ class PickLanguageViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     
-    let list: [String] = Array(Language.LanguageCode.values).sorted()
+    let list: [String] = Language.list
     var language: String = ""
     
     override func viewDidLoad() {
